@@ -1,0 +1,8 @@
+<div class="card">
+  <img class="card-img-top" src="{{Employee.PictureUrl}}"/>
+  <div class="card-block">
+    <h4 class="card-title">{{Employee.FirstName + ' ' + Employee.LastName}}</h4>
+    <p class="card-text">Role: {{Employee.Role}}</p>
+    <a class="btn btn-primary" (click)="EmitClickEvent(Employee)">{{ButtonText}}</a>
+  </div>
+</div>

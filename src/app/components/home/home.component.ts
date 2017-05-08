@@ -2,15 +2,16 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { EmployeeService } from "../../services/employee.service";
 import { Subscription } from "rxjs/Subscription";
 import { Employee } from "../../models/employee";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy
+export class HomeComponent implements OnInit
 {
-  constructor(private employeeService: EmployeeService)
+  constructor(private employeeService: EmployeeService, private router:Router)
   { }
 
   public Employees: Employee[];
@@ -22,16 +23,11 @@ export class HomeComponent implements OnInit, OnDestroy
     // Fetch our employees from a mock web service
     this.employeeService.GetEmployees().subscribe((employeesP) => {
       this.Employees = employeesP;
-    })
+    });
   }
 
-  public ngOnDestroy(): void
+  public NavigatToEmployeePage(employeeP: Employee)
   {
-    this.m_EmployeeSubscription.unsubscribe();
-  }
-
-  public AlertHiddenAbility(employeeP: Employee)
-  {
-    alert(employeeP.FirstName);
+    this.router.navigate(['/employee-view', employeeP.ID])
   }
 }

@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3>Employee View</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs">
+
+  </div>
+
+  <div class="col-xs-6" *ngIf="Employee">
+    <tb-employee [employee]="Employee" [buttonText]="'Alert my name'" (buttonClicked)="AlertMyName($event)"></tb-employee>
+  </div>
+
+  <div class="col-xs">
+
+  </div>
+</div>

@@ -8,11 +8,15 @@ import { AppComponent } from './components/app/app.component';
 import { EmployeeService } from "./services/employee.service";
 import { HomeComponent } from './components/home/home.component';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import {EmployeeComponent} from "./components/employee/employee.component";
+import { EmployeeViewComponent } from './components/employee-view/employee-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    EmployeeComponent,
+    EmployeeViewComponent
   ],
   imports: [
     BrowserModule,
